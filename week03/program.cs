@@ -1,28 +1,23 @@
+using System;
+
 class Program
 {
     static void Main(string[] args)
     {
-        Reference reference = new Reference("John", 3, 16);
-
-        Scripture scripture = new Scripture(
-            reference,
-            "For God so loved the world that he gave his only begotten Son"
-        );
+        Reference reference = new Reference("Proverbs", 3, 5, 6);
+        Scripture scripture = new Scripture(reference, "Trust in the Lord with all thine heart and lean not unto thine own understanding.");
 
         while (!scripture.IsCompletelyHidden())
         {
             Console.Clear();
-
             Console.WriteLine(scripture.GetDisplayText());
-
             Console.WriteLine();
-            Console.Write("Press Enter to continue or type 'quit' to finish: ");
-
+            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+            
             string input = Console.ReadLine();
-
-            if (input == "quit")
+            if (input.ToLower() == "quit")
             {
-                return;
+                break;
             }
 
             scripture.HideRandomWords(3);
