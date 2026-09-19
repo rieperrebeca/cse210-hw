@@ -2,7 +2,6 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _words;
-
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
@@ -15,7 +14,6 @@ public class Scripture
             _words.Add(new Word(word));
         }
     }
-
     public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
@@ -26,7 +24,6 @@ public class Scripture
             _words[index].Hide();
         }
     }
-
     public string GetDisplayText()
     {
         string display = _reference.GetDisplayText() + "\n";
@@ -38,7 +35,6 @@ public class Scripture
 
         return display;
     }
-
     public bool IsCompletelyHidden()
     {
         foreach (Word word in _words)
@@ -48,7 +44,6 @@ public class Scripture
                 return false;
             }
         }
-
         return true;
     }
 }
